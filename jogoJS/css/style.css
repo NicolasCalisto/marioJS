@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.game-board {
+    width: 80%;
+    height: 500px;
+    border: 1px solid #333;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.pipe {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    height: 80px;
+    animation: pipe-animation 2s infinite linear;
+}
+
+@keyframes pipe-animation {
+    from{
+        right: -80px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+.mario {
+    position: absolute;
+    width: 150px;
+    bottom: 0;
+
+}
+
+.jump {
+    animation: jump-animation 800ms ease-out;
+}
+
+@keyframes jump-animation {
+    0% {
+        bottom: 0;
+    }
+
+    40% {
+        bottom: 160px;
+    }
+
+    50% {
+        bottom: 160px;
+    }
+
+    60% {
+        bottom: 160px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
