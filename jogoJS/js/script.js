@@ -6,9 +6,9 @@ const jump = () => {
     setTimeout(() => {
         mario.classList.remove('jump');
     }, 500)
-}
+};
 
-const loop = setInterval(() => {
+const startGame = setInterval(() => {
 
     const pipePosition = pipe.offsetLeft;
     const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
@@ -20,8 +20,16 @@ const loop = setInterval(() => {
 
         mario.style.animation = 'none';
         mario.style.bottom = `${marioPosition}px`;
+
+        mario.src = './imagens/game-over.png'
+        mario.style.width = '75px'
+        mario.style.marginLeft = '45px'
+        mario.style.marginBottom = '20px'
+
     }
 
 }, 10);
+
+
 
 document.addEventListener('keydown', jump);
